@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funlish Language School | Have Fun With English!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #14e7e7;
+            --text: #4f5453;
+            --accent1: #fd700e;
+            --accent2: #ffca02;
+            --neutral: #c0bf9b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            background-color: var(--primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Hero */
+        header {
+            padding: 20px 0;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 0 100px;
+        }
+
+        .hero h1 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 4rem;
+            margin-bottom: 15px;
+            color: var(--accent1);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent2);
+            color: var(--text);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            background-color: var(--accent1);
+            color: white;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--accent2);
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent2);
+            color: var(--text);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+            background-color: white;
+            border-radius: 30px 30px 0 0;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.05);
+            margin-bottom: -30px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--accent1);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            background: var(--accent2);
+            bottom: -10px;
+            left: 25%;
+            border-radius: 2px;
+        }
+
+        .about-content, .different-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        /* Why Different Section */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            width: 300px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border: 1px solid rgba(192, 191, 155, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--neutral);
+        }
+
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--accent1);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--accent1);
+        }
+
+        /* Founder Section */
+        .founder-section {
+            text-align: center;
+            padding: 60px 0;
+            background-color: rgba(255,255,255,0.9);
+            border-radius: 20px;
+            margin: 40px auto;
+            max-width: 900px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .founder-profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .founder-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--accent2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .founder-image img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .founder-image .placeholder {
+            font-size: 4rem;
+            color: var(--neutral);
+        }
+
+        .founder-info h3 {
+            font-size: 1.8rem;
+            color: var(--accent1);
+            margin-bottom: 10px;
+        }
+
+        .founder-title {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .founder-bio {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: left;
+            padding: 0 20px;
+        }
+
+        .program-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border: 1px solid rgba(192, 191, 155, 0.3);
+        }
+
+        .program-card h4 {
+            color: var(--accent1);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            margin-top: 50px;
+        }
+
+        .testimonial-slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 30px;
+            padding: 20px 0;
+            scrollbar-width: none;
+        }
+
+        .testimonial-slider::-webkit-scrollbar {
+            display: none;
+        }
+
+        .testimonial-card {
+            min-width: 350px;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            scroll-snap-align: start;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border: 1px solid var(--neutral);
+            position: relative;
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            font-size: 5rem;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            color: rgba(192, 191, 155, 0.2);
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-card .author {
+            font-weight: 600;
+            color: var(--accent1);
+        }
+
+        /* Gallery */
+        .video-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Contact */
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .social-link {
+            display: inline-block;
+            margin: 30px 10px 0;
+            font-size: 1.5rem;
+            color: var(--text);
+            transition: color 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--accent1);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            background-color: white;
+            border-radius: 0 0 30px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes underline {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        .underline-hover {
+            position: relative;
+            display: inline-block;
+        }
+
+        .underline-hover:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--accent2);
+            transition: width 0.3s ease;
+        }
+
+        .underline-hover:hover:after {
+            width: 100%;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .btn {
+                display: block;
+                margin: 10px auto;
+                max-width: 200px;
+            }
+
+            .btn-outline {
+                margin-left: auto;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .testimonial-card {
+                min-width: 280px;
+            }
+
+            .founder-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            .founder-info h3 {
+                font-size: 1.5rem;
+            }
+
+            .program-card {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <!-- Logo could be added here -->
+        </header>
+
+        <section class="hero">
+            <h1>Funlish Language School</h1>
+            <p>Have Fun With English!</p>
+            <a href="#contact" class="btn">Join a Class</a>
+            <a href="#about" class="btn btn-outline">Learn More</a>
+        </section>
+    </div>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Funlish</h2>
+            <div class="about-content">
+                <p>Funlish is an activity-based language tutorial center attended by more than 1000 students from classes V to XII. We focus on English language & literature, and help students with ICSE & ISC English. We believe in making English fun through games, contests and innovation.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="different">
+        <div class="container">
+            <h2 class="section-title">Why Funlish is Different</h2>
+            <div class="different-content">
+                <p>We offer international online collaborations with students and teachers from Romania, Malaysia, Russia, UK, and USA. Our founder Mrs. Swati Bakshi believes: <strong>"Learning and Technology can coexist if used judiciously."</strong> She also advocates for Environment, Education, and runs a Charity.</p>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Global Connections</h3>
+                    <p>Collaborate with students worldwide through our international partnerships.</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Learning Through Play</h3>
+                    <p>Our games and contests make mastering English enjoyable and effective.</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Exam Excellence</h3>
+                    <p>Specialized support for ICSE & ISC English exams with proven results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="founder">
+        <div class="container">
+            <h2 class="section-title">Our Founder</h2>
+            <div class="founder-section">
+                <div class="founder-profile">
+                    <div class="founder-image">
+                        <div class="placeholder"><i class="fas fa-user-tie"></i></div>
+                        <!-- <img src="founder-image.jpg" alt="Swati Bakshi Purkayastha"> -->
+                    </div>
+                    <div class="founder-info">
+                        <h3>Swati Bakshi Purkayastha</h3>
+                        <div class="founder-title">Independent Education Management Professional</div>
+                    </div>
+                </div>
+
+                <div class="program-details">
+                    <div class="program-card">
+                        <h4>About Funlish</h4>
+                        <p>Funlish concentrates on teaching curricular and extra curricular English literature and language to students of primary, middle and high school. Out-of-the-box methods are used to enable students to have fun with English.</p>
+                        <p>Their comprehension, reading, writing and communicative skills are strengthened through regular quiz, creative writing and elocution contests, battle of books, enactment of literary pieces, language games and many more. The sole objective is to let the children enjoy reading English without dreading the language and explore its tremendous potential in the modern world.</p>
+                    </div>
+
+                    <div class="program-card">
+                        <h4>About TCPDI</h4>
+                        <p>TCPDI is an NGO that works towards the fostering of peace in the community. It runs a school for primarily the socio economically backward children of a suburb of Kolkata. The objective is to impart education for peace in the violence prone sectors.</p>
+                        <p>In this field we have been partnering with students of Duke University USA for two years now.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What People Say</h2>
+            <div class="testimonials">
+                <div class="testimonial-slider">
+                    <div class="testimonial-card">
+                        <p>Funlish helped my daughter fall in love with English. The games & contests built her confidence immensely!</p>
+                        <div class="author">— Priya Sen, Parent</div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p>Thanks to Funlish, I scored highest in my ICSE English exam!</p>
+                        <div class="author">— Rohan Das, Student</div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p>The international collabs were amazing! I got to speak with students in Romania and UK. It was so exciting!</p>
+                        <div class="author">— Ananya Gupta, Class XI</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="container">
+            <h2 class="section-title">Funlish in Action</h2>
+            <div class="video-gallery">
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/D0kS9FuPzuU?si=9N7SJqFuAHxFcVbp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/TKhiuwfANYI?si=3RdW_C-y4n4I96fE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/gKTrw1Mvkno?si=rmko-j1jP90K74vK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Join the Fun!</h2>
+            <div class="contact-content">
+                <p>Ready to have fun with English? Connect with us to learn more about our programs.</p>
+                <a href="https://www.facebook.com/Funlish" class="social-link" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.youtube.com/@FUNLISHFUNTIME" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                <div style="margin-top: 40px;">
+                    <a href="#contact" class="btn">Join Us Today!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Funlish Language School | Founded by Swati Bakshi Purkayastha</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.querySelector('.testimonial-slider');
+            let scrollAmount = 0;
+            const scrollStep = 380;
+
+            function autoScroll() {
+                scrollAmount += scrollStep;
+                if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
+                    scrollAmount = 0;
+                }
+                slider.scrollTo({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            }
+
+            setInterval(autoScroll, 3000);
+
+            const socialLinks = document.querySelectorAll('.social-link');
+            socialLinks.forEach(link => {
+                link.addEventListener('mouseenter', () => {
+                    link.style.transform = 'scale(1.2)';
+                });
+                link.addEventListener('mouseleave', () => {
+                    link.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
